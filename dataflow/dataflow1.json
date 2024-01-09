@@ -1,0 +1,62 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "PipeTestDataTxt",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          {#FileIdentification} as string,",
+				"          Transactiontype as string,",
+				"          DealerNumber as string,",
+				"          DealerName as string,",
+				"          DealerState as string,",
+				"          FormNumber as string,",
+				"          CoverageCode as string,",
+				"          ContractNumber as string,",
+				"          PurchaseDate as string,",
+				"          PurchaseAmount as string,",
+				"          DentWizardFee as string,",
+				"          CancelDate as string,",
+				"          CancelPercentage as string,",
+				"          WarrantyTerm as string,",
+				"          VehicleMake as string,",
+				"          VehicleModel as string,",
+				"          VehicleYear as string,",
+				"          VehicleVIN as string,",
+				"          NewUsed as string,",
+				"          CustomerFirstName as string,",
+				"          CustomerLastName as string,",
+				"          CustomerMailingAddressStreet1 as string,",
+				"          CustomerMailingAddressCity as string,",
+				"          CustomerMailingAddressState as string,",
+				"          CustomerMailingAddressZipCode as string,",
+				"          FiledRetailPrice as string,",
+				"          FormBrandCode as string,",
+				"          OptionCode as string,",
+				"          TermIntervalCode as string,",
+				"          ContractStartingMileage as string,",
+				"          ActualRetail as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 derive(CoverageCode = iif(CoverageCode==\"DSU\", \"BS-DENT-79\", \"\")) ~> derivedColumn1"
+			]
+		}
+	}
+}
