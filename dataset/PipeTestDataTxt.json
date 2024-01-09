@@ -1,6 +1,7 @@
 {
-	"name": "DelimitedText1",
+	"name": "PipeTestDataTxt",
 	"properties": {
+		"description": "Test data pipe delimited",
 		"linkedServiceName": {
 			"referenceName": "AzureFileStorage1",
 			"type": "LinkedServiceReference"
@@ -16,6 +17,131 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "#FileIdentification",
+				"type": "String"
+			},
+			{
+				"name": "Transactiontype",
+				"type": "String"
+			},
+			{
+				"name": "DealerNumber",
+				"type": "String"
+			},
+			{
+				"name": "DealerName",
+				"type": "String"
+			},
+			{
+				"name": "DealerState",
+				"type": "String"
+			},
+			{
+				"name": "FormNumber",
+				"type": "String"
+			},
+			{
+				"name": "CoverageCode",
+				"type": "String"
+			},
+			{
+				"name": "ContractNumber",
+				"type": "String"
+			},
+			{
+				"name": "PurchaseDate",
+				"type": "String"
+			},
+			{
+				"name": "PurchaseAmount",
+				"type": "String"
+			},
+			{
+				"name": "DentWizardFee",
+				"type": "String"
+			},
+			{
+				"name": "CancelDate",
+				"type": "String"
+			},
+			{
+				"name": "CancelPercentage",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyTerm",
+				"type": "String"
+			},
+			{
+				"name": "VehicleMake",
+				"type": "String"
+			},
+			{
+				"name": "VehicleModel",
+				"type": "String"
+			},
+			{
+				"name": "VehicleYear",
+				"type": "String"
+			},
+			{
+				"name": "VehicleVIN",
+				"type": "String"
+			},
+			{
+				"name": "NewUsed",
+				"type": "String"
+			},
+			{
+				"name": "CustomerFirstName",
+				"type": "String"
+			},
+			{
+				"name": "CustomerLastName",
+				"type": "String"
+			},
+			{
+				"name": "CustomerMailingAddressStreet1",
+				"type": "String"
+			},
+			{
+				"name": "CustomerMailingAddressCity",
+				"type": "String"
+			},
+			{
+				"name": "CustomerMailingAddressState",
+				"type": "String"
+			},
+			{
+				"name": "CustomerMailingAddressZipCode",
+				"type": "String"
+			},
+			{
+				"name": "FiledRetailPrice",
+				"type": "String"
+			},
+			{
+				"name": "FormBrandCode",
+				"type": "String"
+			},
+			{
+				"name": "OptionCode",
+				"type": "String"
+			},
+			{
+				"name": "TermIntervalCode",
+				"type": "String"
+			},
+			{
+				"name": "ContractStartingMileage",
+				"type": "String"
+			},
+			{
+				"name": "ActualRetail",
+				"type": "String"
+			}
+		]
 	}
 }
