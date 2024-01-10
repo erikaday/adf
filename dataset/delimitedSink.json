@@ -13,9 +13,10 @@
 				"container": "datafactory"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\r",
 			"escapeChar": "\\",
 			"firstRowAsHeader": false,
-			"quoteChar": "\""
+			"quoteChar": null
 		},
 		"schema": [
 			{

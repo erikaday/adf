@@ -66,6 +66,10 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"source": {
+									"name": "DealerNumber",
+									"type": "String"
+								},
 								"sink": {
 									"ordinal": 1
 								}
