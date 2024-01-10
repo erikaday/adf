@@ -2,15 +2,14 @@
 	"name": "delimitedSink",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "AzureFileStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "datafactory"
+				"type": "AzureFileStorageLocation"
 			},
 			"columnDelimiter": ",",
 			"rowDelimiter": "\r",
