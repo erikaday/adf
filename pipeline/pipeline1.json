@@ -66,6 +66,11 @@
 								"sink": {
 									"ordinal": 2
 								}
+							},
+							{
+								"sink": {
+									"ordinal": 3
+								}
 							}
 						],
 						"typeConversion": true,
