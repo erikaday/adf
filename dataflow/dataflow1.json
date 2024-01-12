@@ -10,17 +10,16 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
-				}
-			],
-			"sinks": [
+				},
 				{
 					"dataset": {
-						"referenceName": "Json1",
+						"referenceName": "DelimitedSource",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "source2"
 				}
 			],
+			"sinks": [],
 			"transformations": [
 				{
 					"name": "derivedColumn1"
@@ -63,14 +62,13 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(CoverageCode = iif(CoverageCode==\"DSU\", \"BS-DENT-79\", \"\")) ~> derivedColumn1",
-				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"source(output(",
+				"          {SonsioDealerNumber|ContractNumber|ContractStatus|CancellationEffectiveDate|RefundAmount|TransferFee|ProgramDescription|ProgramID|CustomerFirstName|CustomerLastName|CustomerStreetAddress1|CustomerStreetAddress2|CustomerCity|CustomerState|CustomerZip|CustomerHomePhone|CustomerEmailAddress|VehicleYear|VehicleMake|VehicleModel|VehicleVIN|ContractSaleDate|ContractTermMonths|RetailRate|TotalPaymentToSonsio} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source1 derive(CoverageCode = iif(CoverageCode==\"DSU\", \"BS-DENT-79\", \"\")) ~> derivedColumn1"
 			]
 		}
 	}

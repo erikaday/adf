@@ -10,7 +10,9 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureFileStorageLocation"
+				"type": "AzureFileStorageLocation",
+				"fileName": "Amynta-APITest.txt",
+				"folderPath": "source"
 			},
 			"columnDelimiter": "|",
 			"escapeChar": "\\",
