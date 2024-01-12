@@ -10,65 +10,54 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
-				},
+				}
+			],
+			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "DelimitedSource",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
 					},
-					"name": "source2"
+					"name": "sink1"
 				}
 			],
-			"sinks": [],
-			"transformations": [
-				{
-					"name": "derivedColumn1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          {#FileIdentification} as string,",
-				"          Transactiontype as string,",
-				"          DealerNumber as string,",
-				"          DealerName as string,",
-				"          DealerState as string,",
-				"          FormNumber as string,",
-				"          CoverageCode as string,",
+				"          SonsioDealerNumber as string,",
 				"          ContractNumber as string,",
-				"          PurchaseDate as string,",
-				"          PurchaseAmount as string,",
-				"          DentWizardFee as string,",
-				"          CancelDate as string,",
-				"          CancelPercentage as string,",
-				"          WarrantyTerm as string,",
-				"          VehicleMake as string,",
-				"          VehicleModel as string,",
-				"          VehicleYear as string,",
-				"          VehicleVIN as string,",
-				"          NewUsed as string,",
+				"          ContractStatus as string,",
+				"          CancellationEffectiveDate as string,",
+				"          RefundAmount as string,",
+				"          TransferFee as string,",
+				"          ProgramDescription as string,",
+				"          ProgramID as string,",
 				"          CustomerFirstName as string,",
 				"          CustomerLastName as string,",
-				"          CustomerMailingAddressStreet1 as string,",
-				"          CustomerMailingAddressCity as string,",
-				"          CustomerMailingAddressState as string,",
-				"          CustomerMailingAddressZipCode as string,",
-				"          FiledRetailPrice as string,",
-				"          FormBrandCode as string,",
-				"          OptionCode as string,",
-				"          TermIntervalCode as string,",
-				"          ContractStartingMileage as string,",
-				"          ActualRetail as string",
+				"          CustomerStreetAddress1 as string,",
+				"          CustomerStreetAddress2 as string,",
+				"          CustomerCity as string,",
+				"          CustomerState as string,",
+				"          CustomerZip as string,",
+				"          CustomerHomePhone as string,",
+				"          CustomerEmailAddress as string,",
+				"          VehicleYear as string,",
+				"          VehicleMake as string,",
+				"          VehicleModel as string,",
+				"          VehicleVIN as string,",
+				"          ContractSaleDate as string,",
+				"          ContractTermMonths as string,",
+				"          RetailRate as string,",
+				"          TotalPaymentToSonsio as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source(output(",
-				"          {SonsioDealerNumber|ContractNumber|ContractStatus|CancellationEffectiveDate|RefundAmount|TransferFee|ProgramDescription|ProgramID|CustomerFirstName|CustomerLastName|CustomerStreetAddress1|CustomerStreetAddress2|CustomerCity|CustomerState|CustomerZip|CustomerHomePhone|CustomerEmailAddress|VehicleYear|VehicleMake|VehicleModel|VehicleVIN|ContractSaleDate|ContractTermMonths|RetailRate|TotalPaymentToSonsio} as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source2",
-				"source1 derive(CoverageCode = iif(CoverageCode==\"DSU\", \"BS-DENT-79\", \"\")) ~> derivedColumn1"
+				"     format: 'json',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
