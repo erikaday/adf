@@ -21,31 +21,7 @@
 		},
 		"schema": [
 			{
-				"name": "#FileIdentification",
-				"type": "String"
-			},
-			{
-				"name": "Transactiontype",
-				"type": "String"
-			},
-			{
-				"name": "DealerNumber",
-				"type": "String"
-			},
-			{
-				"name": "DealerName",
-				"type": "String"
-			},
-			{
-				"name": "DealerState",
-				"type": "String"
-			},
-			{
-				"name": "FormNumber",
-				"type": "String"
-			},
-			{
-				"name": "CoverageCode",
+				"name": "SonsioDealerNumber",
 				"type": "String"
 			},
 			{
@@ -53,47 +29,27 @@
 				"type": "String"
 			},
 			{
-				"name": "PurchaseDate",
+				"name": "ContractStatus",
 				"type": "String"
 			},
 			{
-				"name": "PurchaseAmount",
+				"name": "CancellationEffectiveDate",
 				"type": "String"
 			},
 			{
-				"name": "DentWizardFee",
+				"name": "RefundAmount",
 				"type": "String"
 			},
 			{
-				"name": "CancelDate",
+				"name": "TransferFee",
 				"type": "String"
 			},
 			{
-				"name": "CancelPercentage",
+				"name": "ProgramDescription",
 				"type": "String"
 			},
 			{
-				"name": "WarrantyTerm",
-				"type": "String"
-			},
-			{
-				"name": "VehicleMake",
-				"type": "String"
-			},
-			{
-				"name": "VehicleModel",
-				"type": "String"
-			},
-			{
-				"name": "VehicleYear",
-				"type": "String"
-			},
-			{
-				"name": "VehicleVIN",
-				"type": "String"
-			},
-			{
-				"name": "NewUsed",
+				"name": "ProgramID",
 				"type": "String"
 			},
 			{
@@ -105,43 +61,63 @@
 				"type": "String"
 			},
 			{
-				"name": "CustomerMailingAddressStreet1",
+				"name": "CustomerStreetAddress1",
 				"type": "String"
 			},
 			{
-				"name": "CustomerMailingAddressCity",
+				"name": "CustomerStreetAddress2",
 				"type": "String"
 			},
 			{
-				"name": "CustomerMailingAddressState",
+				"name": "CustomerCity",
 				"type": "String"
 			},
 			{
-				"name": "CustomerMailingAddressZipCode",
+				"name": "CustomerState",
 				"type": "String"
 			},
 			{
-				"name": "FiledRetailPrice",
+				"name": "CustomerZip",
 				"type": "String"
 			},
 			{
-				"name": "FormBrandCode",
+				"name": "CustomerHomePhone",
 				"type": "String"
 			},
 			{
-				"name": "OptionCode",
+				"name": "CustomerEmailAddress",
 				"type": "String"
 			},
 			{
-				"name": "TermIntervalCode",
+				"name": "VehicleYear",
 				"type": "String"
 			},
 			{
-				"name": "ContractStartingMileage",
+				"name": "VehicleMake",
 				"type": "String"
 			},
 			{
-				"name": "ActualRetail",
+				"name": "VehicleModel",
+				"type": "String"
+			},
+			{
+				"name": "VehicleVIN",
+				"type": "String"
+			},
+			{
+				"name": "ContractSaleDate",
+				"type": "String"
+			},
+			{
+				"name": "ContractTermMonths",
+				"type": "String"
+			},
+			{
+				"name": "RetailRate",
+				"type": "String"
+			},
+			{
+				"name": "TotalPaymentToSonsio",
 				"type": "String"
 			}
 		]
