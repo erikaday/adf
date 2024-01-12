@@ -13,7 +13,7 @@
 				"fileName": "Amynta-APITest.txt",
 				"container": "datafactory"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
