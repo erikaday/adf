@@ -1,13 +1,124 @@
 {
 	"name": "Json1",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobStorageLocation",
+				"fileName": "APISchema.json",
+				"folderPath": "schema",
+				"container": "datafactory"
 			}
 		},
-		"schema": {}
+		"schema": {
+			"type": "object",
+			"properties": {
+				"coverages": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"planCode": {
+								"type": "string"
+							},
+							"retailCost": {
+								"type": "number"
+							},
+							"term": {
+								"type": "object",
+								"properties": {
+									"termOdometer": {
+										"type": "integer"
+									},
+									"termMonths": {
+										"type": "integer"
+									}
+								}
+							}
+						}
+					}
+				},
+				"dealerNumber": {
+					"type": "string"
+				},
+				"contractNumber": {
+					"type": "string"
+				},
+				"saleDate": {
+					"type": "string"
+				},
+				"saleOdometer": {
+					"type": "integer"
+				},
+				"startingOdometer": {
+					"type": "integer"
+				},
+				"endingOdometer": {
+					"type": "integer"
+				},
+				"vehicle": {
+					"type": "object",
+					"properties": {
+						"vin": {
+							"type": "string"
+						},
+						"vehicleAgeType": {
+							"type": "string"
+						}
+					}
+				},
+				"customer": {
+					"type": "object",
+					"properties": {
+						"dateOfBirth": {
+							"type": "string"
+						},
+						"culture": {
+							"type": "string"
+						},
+						"firstName": {
+							"type": "string"
+						},
+						"lastName": {
+							"type": "string"
+						},
+						"phone": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"address": {
+							"type": "object",
+							"properties": {
+								"countryCode": {
+									"type": "string"
+								},
+								"address1": {
+									"type": "string"
+								},
+								"city": {
+									"type": "string"
+								},
+								"state": {
+									"type": "string"
+								},
+								"postalCode": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"culture": {
+					"type": "string"
+				}
+			}
+		}
 	}
 }
