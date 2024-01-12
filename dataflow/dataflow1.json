@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "PipeTestDataTxt",
+						"referenceName": "DelimitedBlobText",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
