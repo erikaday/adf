@@ -3,30 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "dataflow1",
-				"type": "ExecuteDataFlow",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataflow": {
-						"referenceName": "dataflow1",
-						"type": "DataFlowReference"
-					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
-					},
-					"traceLevel": "Fine"
-				}
-			},
-			{
 				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
@@ -170,51 +146,6 @@
 								},
 								"sink": {
 									"path": "$['customer']['address']['postalCode']"
-								}
-							},
-							{
-								"source": {
-									"name": "ContractStatus",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['coverages']"
-								}
-							},
-							{
-								"source": {
-									"name": "ProgramID",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['coverages']['planCode']"
-								}
-							},
-							{
-								"source": {
-									"name": "TotalPaymentToSonsio",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['coverages']['retailCost']"
-								}
-							},
-							{
-								"source": {
-									"name": "CancellationEffectiveDate",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['coverages']['term']"
-								}
-							},
-							{
-								"source": {
-									"name": "ContractTermMonths",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['coverages']['term']['termMonths']"
 								}
 							}
 						]
