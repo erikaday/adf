@@ -165,6 +165,15 @@
 								"sink": {
 									"path": "$['coverages']['retailCost']"
 								}
+							},
+							{
+								"source": {
+									"name": "ContractTermMonths",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']['term']['termMonths']"
+								}
 							}
 						]
 					}
