@@ -18,7 +18,7 @@
 						"referenceName": "Json1",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "sink2"
 				}
 			],
 			"transformations": [
@@ -74,33 +74,7 @@
 				"          culture as string",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     mapColumn(",
-				"          dealerNumber = SonsioDealerNumber,",
-				"          ContractStatus,",
-				"          CancellationEffectiveDate,",
-				"          RefundAmount,",
-				"          TransferFee,",
-				"          ProgramDescription,",
-				"          coverageCode = ProgramID,",
-				"          CustomerFirstName,",
-				"          CustomerLastName,",
-				"          CustomerStreetAddress1,",
-				"          CustomerStreetAddress2,",
-				"          CustomerCity,",
-				"          CustomerState,",
-				"          CustomerZip,",
-				"          CustomerHomePhone,",
-				"          CustomerEmailAddress,",
-				"          VehicleYear,",
-				"          VehicleMake,",
-				"          VehicleModel,",
-				"          VehicleVIN,",
-				"          ContractSaleDate,",
-				"          ContractTermMonths,",
-				"          RetailRate,",
-				"          TotalPaymentToSonsio",
-				"     )) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> sink2"
 			]
 		}
 	}
