@@ -46,7 +46,7 @@
 				"source1 derive(dealerNumber = iif(dealerNumber=='DEALERCREDIT01', \"B1001001\", dealerNumber),",
 				"          saleOdometer = \"199\",",
 				"          startingOdometer = \"0\",",
-				"          vehicle = vehicle.vehicleAgeType) ~> derivedColumn1",
+				"          vehicle = array(vehicle.vin, vehicle.vehicleAgeType)) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
