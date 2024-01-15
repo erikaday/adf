@@ -25,6 +25,213 @@
 					},
 					"traceLevel": "Fine"
 				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "SonsioDealerNumber",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['dealerNumber']"
+								}
+							},
+							{
+								"source": {
+									"name": "ContractNumber",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['contractNumber']"
+								}
+							},
+							{
+								"source": {
+									"name": "ContractSaleDate",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['saleDate']"
+								}
+							},
+							{
+								"source": {
+									"name": "VehicleVIN",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['vehicle']['vin']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerFirstName",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['firstName']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerLastName",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['lastName']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerHomePhone",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['phone']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerEmailAddress",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['email']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerStreetAddress1",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['address']['address1']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerCity",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['address']['city']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerState",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['address']['state']"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerZip",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['customer']['address']['postalCode']"
+								}
+							},
+							{
+								"source": {
+									"name": "SonsioDealerNumber",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']"
+								}
+							},
+							{
+								"source": {
+									"name": "ProgramID",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']['planCode']"
+								}
+							},
+							{
+								"source": {
+									"name": "TotalPaymentToSonsio",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']['retailCost']"
+								}
+							},
+							{
+								"source": {
+									"name": "SonsioDealerNumber",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']['term']"
+								}
+							},
+							{
+								"source": {
+									"name": "ContractTermMonths",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']['term']['termMonths']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedBlobText",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
