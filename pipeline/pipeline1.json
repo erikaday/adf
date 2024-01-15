@@ -174,7 +174,7 @@
 							},
 							{
 								"source": {
-									"name": "SonsioDealerNumber",
+									"name": "ContractStatus",
 									"type": "String"
 								},
 								"sink": {
@@ -201,7 +201,7 @@
 							},
 							{
 								"source": {
-									"name": "SonsioDealerNumber",
+									"name": "CancellationEffectiveDate",
 									"type": "String"
 								},
 								"sink": {
