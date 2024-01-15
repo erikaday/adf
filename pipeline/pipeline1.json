@@ -147,6 +147,24 @@
 								"sink": {
 									"path": "$['customer']['address']['postalCode']"
 								}
+							},
+							{
+								"source": {
+									"name": "ProgramID",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']['planCode']"
+								}
+							},
+							{
+								"source": {
+									"name": "TotalPaymentToSonsio",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['coverages']['retailCost']"
+								}
 							}
 						]
 					}
