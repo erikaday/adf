@@ -47,7 +47,7 @@
 				"          saleOdometer = \"199\",",
 				"          startingOdometer = \"0\",",
 				"          {vehicle.vehicleAgeType} = iif(vehicle.vehicleAgeType == \"A\", \"N\", vehicle.vehicleAgeType),",
-				"          each(match(name=='vehicle.vehicleAgeType'), \"vehicleAgeType1\" = iif(vehicle.vehicleAgeType==\"A\", \"N\", vehicle.vehicleAgeType))) ~> derivedColumn1",
+				"          each(match(name=='vehicleAgeType'), \"vehicleAgeType1\" = iif(vehicle.vehicleAgeType==\"A\", \"N\", vehicle.vehicleAgeType))) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
