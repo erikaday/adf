@@ -24,6 +24,9 @@
 			"transformations": [
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "alterRow2"
 				}
 			],
 			"scriptLines": [
@@ -43,11 +46,12 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine') ~> source1",
-				"source1 derive(dealerNumber = iif(dealerNumber=='DEALERCREDIT01', \"B1001001\", dealerNumber),",
+				"alterRow2 derive(dealerNumber = iif(dealerNumber=='DEALERCREDIT01', \"B1001001\", dealerNumber),",
 				"          saleOdometer = \"199\",",
 				"          startingOdometer = \"0\",",
-				"          vehicle = @(vehicleAgeType=iif(vehicle.vehicleAgeType==\"A\",\"N\",vehicle.vehicleAgeType),",
+				"          vehicleDerived = @(vehicleAgeType=iif(vehicle.vehicleAgeType==\"A\",\"N\",vehicle.vehicleAgeType),",
 				"          vin=vehicle.vin)) ~> derivedColumn1",
+				"source1 alterRow(updateIf(iif(coverages.planCode==\"1954\",\"B-SF-DENT-8121-79\",coverages.planCode))) ~> alterRow2",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
