@@ -50,7 +50,7 @@
 				"          vin=vehicle.vin),",
 				"          termDerived = @(termMonths=coverages.term.termMonths,",
 				"          termOdometer=coverages.term.termOdometer),",
-				"          coverages = @(planCode=iif(coverages.planCode==\"1954\", \"B-SF-DENT-8121-79\", coverages.planCode),",
+				"          coverages1 = @(planCode=iif(coverages.planCode==\"1954\", \"B-SF-DENT-8121-79\", coverages.planCode),",
 				"          retailCost=coverages.retailCost,",
 				"          term=coverages.term)) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
