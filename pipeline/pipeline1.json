@@ -280,30 +280,6 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['coverages'][0]['planCode']"
-								},
-								"sink": {
-									"path": "$['coverages']['0']['planCode']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['coverages'][0]['retailCost']"
-								},
-								"sink": {
-									"path": "$['coverages']['0']['retailCost']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['coverages'][0]['term']['termMonths']"
-								},
-								"sink": {
-									"path": "$['coverages']['0']['term']['termMonths']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['dealerNumber']"
 								},
 								"sink": {
@@ -412,6 +388,30 @@
 								},
 								"sink": {
 									"path": "$['vehicle']['vin']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['column1']['planCode'][0]"
+								},
+								"sink": {
+									"path": "$['coverages'][0]['planCode']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['column1']['retailCost'][0]"
+								},
+								"sink": {
+									"path": "$['coverages'][0]['retailCost']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['column1']['term1'][0]['termMonths']"
+								},
+								"sink": {
+									"path": "$['coverages'][0]['term']['termMonths']"
 								}
 							}
 						],
