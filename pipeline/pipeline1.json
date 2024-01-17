@@ -280,7 +280,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['coverages']['planCode']"
+									"path": "$['coverages'][0]['planCode']"
 								},
 								"sink": {
 									"path": "$['coverages']['planCode']"
@@ -288,7 +288,7 @@
 							},
 							{
 								"source": {
-									"path": "$['coverages']['retailCost']"
+									"path": "$['coverages'][0]['retailCost']"
 								},
 								"sink": {
 									"path": "$['coverages']['retailCost']"
@@ -296,7 +296,7 @@
 							},
 							{
 								"source": {
-									"path": "$['coverages']['term']['termMonths']"
+									"path": "$['coverages'][0]['term']['termMonths']"
 								},
 								"sink": {
 									"path": "$['coverages']['term']['termMonths']"
