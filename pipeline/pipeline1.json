@@ -391,14 +391,6 @@
 							},
 							{
 								"source": {
-									"path": "$['coverages']"
-								},
-								"sink": {
-									"path": "$['coverages']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['coverages'][0]['planCode']"
 								},
 								"sink": {
