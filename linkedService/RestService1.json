@@ -1,0 +1,31 @@
+{
+	"name": "RestService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://servicesdt.sonsio.com/pcrs",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"client_id": {
+					"type": "SecureString",
+					"value": "**********"
+				},
+				"client_secret": {
+					"type": "SecureString",
+					"value": "**********"
+				},
+				"username": {
+					"type": "SecureString",
+					"value": "**********"
+				},
+				"password": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
+		}
+	}
+}
