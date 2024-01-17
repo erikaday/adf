@@ -407,14 +407,6 @@
 							},
 							{
 								"source": {
-									"path": "$['coverages'][0]['term']"
-								},
-								"sink": {
-									"path": "$['coverages']['term']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['coverages'][0]['term']['termMonths']"
 								},
 								"sink": {
