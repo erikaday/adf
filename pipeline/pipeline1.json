@@ -392,23 +392,15 @@
 							},
 							{
 								"source": {
-									"path": "$['column1']['retailCost']"
+									"path": "$['coverages']"
 								},
 								"sink": {
-									"path": "$['coverages']['retailCost']"
+									"path": "$['coverages']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['column1']['term1'][0]['termMonths']"
-								},
-								"sink": {
-									"path": "$['coverages']['term']['termMonths']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['coverages']['planCode']"
+									"path": "$['coverages'][0]['planCode']"
 								},
 								"sink": {
 									"path": "$['coverages']['planCode']"
@@ -416,7 +408,7 @@
 							},
 							{
 								"source": {
-									"path": "$['coverages']['retailCost']"
+									"path": "$['coverages'][0]['retailCost']"
 								},
 								"sink": {
 									"path": "$['coverages']['retailCost']"
@@ -424,7 +416,15 @@
 							},
 							{
 								"source": {
-									"path": "$['coverages']['term'][0]['termMonths']"
+									"path": "$['coverages'][0]['term']"
+								},
+								"sink": {
+									"path": "$['coverages']['term']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['coverages'][0]['term']['termMonths']"
 								},
 								"sink": {
 									"path": "$['coverages']['term']['termMonths']"
@@ -432,7 +432,7 @@
 							},
 							{
 								"source": {
-									"path": "$['coverages']['term'][0]['termOdometer']"
+									"path": "$['coverages'][0]['term']['termOdometer']"
 								},
 								"sink": {
 									"path": "$['coverages']['term']['termOdometer']"
