@@ -394,7 +394,7 @@
 									"path": "$['coverages'][0]['planCode']"
 								},
 								"sink": {
-									"path": "$['coverages']['planCode']"
+									"path": "$['coverages'][0]['planCode']"
 								}
 							},
 							{
