@@ -267,7 +267,8 @@
 					"sink": {
 						"type": "JsonSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
 						},
 						"formatSettings": {
 							"type": "JsonWriteSettings"
@@ -279,7 +280,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['planCode']"
+									"path": "$['coverages']['planCode']"
 								},
 								"sink": {
 									"path": "$['coverages']['planCode']"
@@ -287,7 +288,7 @@
 							},
 							{
 								"source": {
-									"path": "['retailCost']"
+									"path": "$['coverages']['retailCost']"
 								},
 								"sink": {
 									"path": "$['coverages']['retailCost']"
@@ -295,7 +296,7 @@
 							},
 							{
 								"source": {
-									"path": "['term']['termMonths']"
+									"path": "$['coverages']['term']['termMonths']"
 								},
 								"sink": {
 									"path": "$['coverages']['term']['termMonths']"
@@ -413,8 +414,7 @@
 									"path": "$['vehicle']['vin']"
 								}
 							}
-						],
-						"collectionReference": "$['coverages']"
+						]
 					}
 				},
 				"inputs": [
