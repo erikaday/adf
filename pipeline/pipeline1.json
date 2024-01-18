@@ -394,7 +394,7 @@
 									"path": "$['coverages'][0]['planCode']"
 								},
 								"sink": {
-									"path": "$['coverages'][0]['planCode']"
+									"path": "$['coverages']['planCode']"
 								}
 							},
 							{
@@ -410,7 +410,7 @@
 									"path": "$['coverages'][0]['term']['termMonths']"
 								},
 								"sink": {
-									"path": "$['coverages'][0]['term']['termMonths']"
+									"path": "$['coverages']['term']['termMonths']"
 								}
 							},
 							{
@@ -418,7 +418,7 @@
 									"path": "$['coverages'][0]['term']['termOdometer']"
 								},
 								"sink": {
-									"path": "$['coverages'][0]['term']['termOdometer']"
+									"path": "$['coverages']['term']['termOdometer']"
 								}
 							}
 						],
