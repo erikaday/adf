@@ -410,7 +410,7 @@
 									"path": "$['coverages'][0]['term']['termMonths']"
 								},
 								"sink": {
-									"path": "$['coverages']['term']['termMonths']"
+									"path": "$['coverages'][0]['term']['termMonths']"
 								}
 							},
 							{
@@ -418,7 +418,7 @@
 									"path": "$['coverages'][0]['term']['termOdometer']"
 								},
 								"sink": {
-									"path": "$['coverages']['term']['termOdometer']"
+									"path": "$['coverages'][0]['term']['termOdometer']"
 								}
 							}
 						],
