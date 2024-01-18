@@ -1,0 +1,54 @@
+{
+	"name": "dataflow3",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "realJson",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "RestResource1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          contractNumber as string,",
+				"          coverages as (planCode as string, retailCost as double, term as (termMonths as integer, termOdometer as integer))[],",
+				"          customer as (address as (address1 as string, city as string, postalCode as string, state as string, countryCode as string), email as string, firstName as string, lastName as string),",
+				"          dealerNumber as string,",
+				"          saleDate as string,",
+				"          saleOdometer as integer,",
+				"          startingOdometer as integer,",
+				"          vehicle as (vehicleAgeType as string, vin as string)",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'documentPerLine') ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     insertHttpMethod: 'POST',",
+				"     timeout: 30,",
+				"     requestFormat: ['type' -> 'json'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

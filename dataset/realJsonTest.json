@@ -1,0 +1,108 @@
+{
+	"name": "realJsonTest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureFileStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureFileStorageLocation",
+				"fileName": "realOutputAPI.json",
+				"folderPath": "realJosnTest"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"contractNumber": {
+					"type": "string"
+				},
+				"coverages": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"planCode": {
+								"type": "string"
+							},
+							"retailCost": {
+								"type": "number"
+							},
+							"term": {
+								"type": "object",
+								"properties": {
+									"termMonths": {
+										"type": "integer"
+									},
+									"termOdometer": {
+										"type": "integer"
+									}
+								}
+							}
+						}
+					}
+				},
+				"customer": {
+					"type": "object",
+					"properties": {
+						"address": {
+							"type": "object",
+							"properties": {
+								"address1": {
+									"type": "string"
+								},
+								"city": {
+									"type": "string"
+								},
+								"postalCode": {
+									"type": "string"
+								},
+								"state": {
+									"type": "string"
+								},
+								"countryCode": {
+									"type": "string"
+								}
+							}
+						},
+						"email": {
+							"type": "string"
+						},
+						"firstName": {
+							"type": "string"
+						},
+						"lastName": {
+							"type": "string"
+						}
+					}
+				},
+				"dealerNumber": {
+					"type": "string"
+				},
+				"saleDate": {
+					"type": "string"
+				},
+				"saleOdometer": {
+					"type": "integer"
+				},
+				"startingOdometer": {
+					"type": "integer"
+				},
+				"vehicle": {
+					"type": "object",
+					"properties": {
+						"vehicleAgeType": {
+							"type": "string"
+						},
+						"vin": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	}
+}
