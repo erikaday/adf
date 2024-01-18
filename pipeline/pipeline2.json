@@ -32,6 +32,12 @@
 						"requestInterval": 10,
 						"requestMethod": "POST",
 						"writeBatchSize": 10000,
+						"additionalHeaders": {
+							"client_id": "SONS",
+							"client_secret": "12345",
+							"username": "SONSSONSIO@PCMICORP.COM",
+							"password": "2BzgoNNxgo"
+						},
 						"httpCompressionType": "none"
 					},
 					"enableStaging": false
